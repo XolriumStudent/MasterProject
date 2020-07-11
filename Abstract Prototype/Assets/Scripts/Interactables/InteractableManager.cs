@@ -22,11 +22,11 @@ public class InteractableManager : MonoBehaviour
         print(UpgradeList.Count);
         for (int i = 0; i < PowerupList.Count; i++)
         {
-            PowerupList[i].objectModifierScriptableObject.GeneratePowerupObject(PowerupList[i].objectModifierScriptableObject);
+            PowerupList[i].objectModifierScriptableObject.GeneratePowerupObject(PowerupList[i].objectModifierScriptableObject, PowerupList[i].objectModifier);
         }
         for (int i = 0; i < UpgradeList.Count; i++)
         {
-            UpgradeList[i].objectModifierScriptableObject.GenerateUpgradeObject(UpgradeList[i].objectModifierScriptableObject);
+            UpgradeList[i].objectModifierScriptableObject.GenerateUpgradeObject(UpgradeList[i].objectModifierScriptableObject, UpgradeList[i].objectModifier);
         }
     }
 }

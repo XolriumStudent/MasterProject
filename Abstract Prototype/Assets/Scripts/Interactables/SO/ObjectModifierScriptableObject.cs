@@ -28,20 +28,22 @@ public class ObjectModifierScriptableObject : ScriptableObject
         interactableController.interactableObjectLocation = interactableObjectLocation;
     }
 
-    public void GenerateUpgradeObject(ObjectModifierScriptableObject objectModifierScriptableObject)
+    public void GenerateUpgradeObject(ObjectModifierScriptableObject objectModifierScriptableObject, InteractableType interactableType)
     {
         SpawnObject();
         interactableController.upgradeObjectType = upgradeObjectType;
         interactableController.upgradeModifier = upgradeModifier;
         interactableController.objectModifierScriptableObject = objectModifierScriptableObject;
+        interactableController.InteractableType = interactableType;
     }
 
-    public void GeneratePowerupObject(ObjectModifierScriptableObject objectModifierScriptableObject)
+    public void GeneratePowerupObject(ObjectModifierScriptableObject objectModifierScriptableObject, InteractableType interactableType)
     {
         SpawnObject();
         interactableController.powerupObjectType = powerupObjectType;
         interactableController.powerupAmount = powerupAmount;
         interactableController.objectModifierScriptableObject = objectModifierScriptableObject;
+        interactableController.InteractableType = interactableType;
     }
 }
 
