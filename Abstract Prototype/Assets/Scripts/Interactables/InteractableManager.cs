@@ -29,6 +29,25 @@ public class InteractableManager : MonoBehaviour
             UpgradeList[i].objectModifierScriptableObject.GenerateUpgradeObject(UpgradeList[i].objectModifierScriptableObject, UpgradeList[i].objectModifier);
         }
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            ObjectModifierScriptableObject instanceTest = ObjectModifierScriptableObject.Create(new ObjectModifierScriptableObjectConfig()
+            {
+                interactableType = InteractableType.NORMAL,
+                interactableInfluence = InteractableInfluence.POWERUP,
+                interactableObjectLocation = new Vector3(-18, 0.5f, -17),
+                upgradeObjectType = UpgradeObjectType.WEAPON,
+                upgradeModifier = 0,
+                powerupAmount = 10,
+                powerupObjectType = PowerupObjectType.SPEED
+            });
+
+            instanceTest.GeneratePowerupObject(instanceTest, instanceTest.interactableType);
+        }
+    }
 }
 
 /// <summary>

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 [CreateAssetMenu(fileName = "Object Modifier", menuName = "ScriptableObjects")]
 public class ObjectModifierScriptableObject : ScriptableObject
 {
     private InteractableController interactableController;
 
-    public GameObject interactableObject;
+    private GameObject interactableObject;
+    public InteractableType interactableType;
     public InteractableInfluence interactableInfluence;
     public Vector3 interactableObjectLocation;
 
@@ -20,6 +22,7 @@ public class ObjectModifierScriptableObject : ScriptableObject
 
     public void SpawnObject()
     {
+        interactableObject = GameObject.Find("InteractableObjectReference");
         GameObject newInteractableObject = Instantiate(interactableObject, interactableObjectLocation, Quaternion.identity);
         newInteractableObject.AddComponent<InteractableController>();
 
@@ -45,6 +48,37 @@ public class ObjectModifierScriptableObject : ScriptableObject
         interactableController.objectModifierScriptableObject = objectModifierScriptableObject;
         interactableController.InteractableType = interactableType;
     }
+
+    public static ObjectModifierScriptableObject Create(ObjectModifierScriptableObjectConfig config)
+    {
+        return ObjectModifierScriptableObject.CreateInstance<ObjectModifierScriptableObject>().Init(config);
+    }
+
+    public ObjectModifierScriptableObject Init(ObjectModifierScriptableObjectConfig config)
+    {
+        interactableType = config.interactableType;
+        interactableInfluence = config.interactableInfluence;
+        interactableObjectLocation = config.interactableObjectLocation;
+        upgradeObjectType = config.upgradeObjectType;
+        upgradeModifier = config.upgradeModifier;
+        powerupAmount = config.powerupAmount;
+        powerupObjectType = config.powerupObjectType;
+        return this;
+    }
+}
+
+public struct ObjectModifierScriptableObjectConfig
+{
+    public GameObject interactableObject;
+    public InteractableType interactableType;
+    public InteractableInfluence interactableInfluence;
+    public Vector3 interactableObjectLocation;
+
+    public UpgradeObjectType upgradeObjectType;
+    public int upgradeModifier;
+
+    public PowerupObjectType powerupObjectType;
+    public float powerupAmount;
 }
 
 public enum UpgradeObjectType { WEAPON, ARMOR}
