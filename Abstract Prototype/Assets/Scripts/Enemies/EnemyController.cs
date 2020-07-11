@@ -91,7 +91,7 @@ public class EnemyController : MonoBehaviour
 
         //Ik voeg de timeToKillWithoutItem / 4 er extra bij toe, zodat het niet al te vreemd voelt voor de speler.
         //Dit moet geplaytest worden voor een goede formule!
-        if (timeToKillWithoutItem - timeToKillWithItem > 15)
+        if (timeToKillWithoutItem - timeToKillWithItem > 5)
             agent.SetDestination(interactable.transform.position);
         else
             agent.SetDestination(player.transform.position);
