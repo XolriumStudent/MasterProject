@@ -12,6 +12,8 @@ public class ObjectModifierScriptableObjectEditor : Editor
         ObjectModifierScriptableObject objectModifierScriptableObject = target as ObjectModifierScriptableObject;
         objectModifierScriptableObject.interactableInfluence = (InteractableInfluence)EditorGUILayout.EnumPopup("Object Modifier Type: ", objectModifierScriptableObject.interactableInfluence);
         EditorGUILayout.Space();
+        objectModifierScriptableObject.interactableObjectLocation = EditorGUILayout.Vector3Field("Spawn Location: ", objectModifierScriptableObject.interactableObjectLocation);
+        EditorGUILayout.Space();
 
         switch (objectModifierScriptableObject.interactableInfluence)
         {

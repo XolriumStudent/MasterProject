@@ -14,6 +14,8 @@ public class ObjectModifierScriptableObject : ScriptableObject
 
     public PowerupObjectType powerupObjectType;
     public float powerupAmount;
+
+    public Vector3 interactableObjectLocation;
 }
 
 public enum UpgradeObjectType { WEAPON, ARMOR}
