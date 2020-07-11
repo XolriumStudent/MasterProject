@@ -51,7 +51,7 @@ public class ObjectModifierScriptableObject : ScriptableObject
 
     public static ObjectModifierScriptableObject Create(ObjectModifierScriptableObjectConfig config)
     {
-        return ObjectModifierScriptableObject.CreateInstance<ObjectModifierScriptableObject>().Init(config);
+        return CreateInstance<ObjectModifierScriptableObject>().Init(config);
     }
 
     public ObjectModifierScriptableObject Init(ObjectModifierScriptableObjectConfig config)
