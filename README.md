@@ -29,3 +29,4 @@ De getallen 7 en 5 zijn magic numbers die ik op dit moment gebruik om de volgend
 **Scenario 3: Afstand van de NPC is kleiner dan het object en de multiplier is goed genoeg om invloed te hebben.**
 ![Scenario 3](MP4s_IMGs/Scenario3.gif)
 #### Prototype 2: Interactable Object System
+*UNDER CONSTRUCTION*
