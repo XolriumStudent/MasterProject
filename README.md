@@ -12,5 +12,11 @@ en deze ook tijdens runtime aanpassen indien nodig.
 
 * *Weights is een term gebruikt om aan te tonen hoe belangrijk een actie is voor een AI. In mijn geval gaat de AI weights gebruiken om te beslissen welk object het beste voordeel geeft*.
 
+Om deze beslissing te laten maken heb ik moeten zoeken naar een bepaalde formule. Uiteindelijk kwam ik zo op de volgende formule dat de NPC zou gebruiken om naar de dichtsbijzijnde NPC te gaan:
+**(NearestNPC_Health / (damage * multiplier * attackSpeed) + (distanceNearestNPC / 7)) - (NearestNPC_Health / (damage * multiplier * attackSpeed) + (distanceNearestObject + distanceNearestNPC / 7)) > 15**
+
+De getallen 7 en 15 zijn magic numbers die ik op dit moment gebruik om de volgende redenen: 
+- De NPC heeft een speed van 8 en heb uitgerekend dat door deze speed de NPC 7 units of distance behaald per seconde.
+- Het getal 15 is gewoon een minimum verschil dat ik verwacht voordat de NPC voor het Object zou gaan.
 
 #### Prototype 2: Interactable Object System
