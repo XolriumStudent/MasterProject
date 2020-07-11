@@ -91,11 +91,11 @@ public class EnemyController : MonoBehaviour
 
         //Ik voeg de timeToKillWithoutItem / 4 er extra bij toe, zodat het niet al te vreemd voelt voor de speler.
         //Dit moet geplaytest worden voor een goede formule!
-        if ((timeToKillWithItem + (timeToKillWithoutItem / 4)) < timeToKillWithoutItem)
+        if (timeToKillWithoutItem - timeToKillWithItem > 15)
             agent.SetDestination(interactable.transform.position);
         else
             agent.SetDestination(player.transform.position);
         print("Time to kill without item: " + timeToKillWithoutItem);
-        print("Time to kill with item: " + (timeToKillWithItem + (timeToKillWithoutItem / 4)));
+        print("Time to kill with item: " + (timeToKillWithItem));
     }
 }
