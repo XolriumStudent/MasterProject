@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 using static InteractableTypes;
-
 public class InteractableController : MonoBehaviour
 {
     [SerializeField]
