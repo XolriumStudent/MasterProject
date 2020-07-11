@@ -15,8 +15,20 @@ public class InteractableManager : MonoBehaviour
     public List<InteractableTypes> PowerupList = new List<InteractableTypes>();
     public List<InteractableTypes> UpgradeList = new List<InteractableTypes>();
 
-    public List<ObjectModifierScriptableObject> powerupList = new List<ObjectModifierScriptableObject>();
-    public List<ObjectModifierScriptableObject> upgradeList = new List<ObjectModifierScriptableObject>();
+
+    private void Start()
+    {
+        print(PowerupList.Count);
+        print(UpgradeList.Count);
+        for (int i = 0; i < PowerupList.Count; i++)
+        {
+            PowerupList[i].objectModifierScriptableObject.GeneratePowerupObject(PowerupList[i].objectModifierScriptableObject);
+        }
+        for (int i = 0; i < UpgradeList.Count; i++)
+        {
+            UpgradeList[i].objectModifierScriptableObject.GenerateUpgradeObject(UpgradeList[i].objectModifierScriptableObject);
+        }
+    }
 }
 
 /// <summary>
@@ -41,7 +53,6 @@ public class InteractableManagerEditor : Editor
             rectangle.y += 2;
             EditorGUI.PropertyField(new Rect(rectangle.x, rectangle.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifier"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rectangle.x + 60, rectangle.y, rectangle.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifierScriptableObject"), GUIContent.none);
-            EditorGUI.PropertyField(new Rect(rectangle.x + rectangle.width - 30, rectangle.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("count"), GUIContent.none);
         };
 
         upgradeList.drawElementCallback = (Rect rectangle, int index, bool isActive, bool isFocused) =>
@@ -50,7 +61,6 @@ public class InteractableManagerEditor : Editor
             rectangle.y += 2;
             EditorGUI.PropertyField(new Rect(rectangle.x, rectangle.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifier"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rectangle.x + 60, rectangle.y, rectangle.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifierScriptableObject"), GUIContent.none);
-            EditorGUI.PropertyField(new Rect(rectangle.x + rectangle.width - 30, rectangle.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("count"), GUIContent.none);
         };
 
         powerupList.drawHeaderCallback = (Rect rectangle) =>
@@ -78,5 +88,4 @@ public struct InteractableTypes
 {
     public InteractableType objectModifier;
     public ObjectModifierScriptableObject objectModifierScriptableObject;
-    public int count;
 }

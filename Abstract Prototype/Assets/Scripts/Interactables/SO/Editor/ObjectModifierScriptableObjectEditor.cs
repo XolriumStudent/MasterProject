@@ -10,6 +10,8 @@ public class ObjectModifierScriptableObjectEditor : Editor
     public override void OnInspectorGUI()
     {
         ObjectModifierScriptableObject objectModifierScriptableObject = target as ObjectModifierScriptableObject;
+
+        objectModifierScriptableObject.interactableObject = (GameObject)EditorGUILayout.ObjectField(objectModifierScriptableObject.interactableObject, typeof(GameObject), false);
         objectModifierScriptableObject.interactableInfluence = (InteractableInfluence)EditorGUILayout.EnumPopup("Object Modifier Type: ", objectModifierScriptableObject.interactableInfluence);
         EditorGUILayout.Space();
         objectModifierScriptableObject.interactableObjectLocation = EditorGUILayout.Vector3Field("Spawn Location: ", objectModifierScriptableObject.interactableObjectLocation);
@@ -18,6 +20,8 @@ public class ObjectModifierScriptableObjectEditor : Editor
         switch (objectModifierScriptableObject.interactableInfluence)
         {
             case InteractableInfluence.POWERUP:
+                objectModifierScriptableObject.upgradeModifier = 0;
+                objectModifierScriptableObject.upgradeObjectType = UpgradeObjectType.WEAPON;
                 objectModifierScriptableObject.powerupObjectType = (PowerupObjectType)EditorGUILayout.EnumPopup("Powerup Type: ", objectModifierScriptableObject.powerupObjectType);
                 EditorGUILayout.Space();
                 switch (objectModifierScriptableObject.powerupObjectType)
@@ -32,6 +36,8 @@ public class ObjectModifierScriptableObjectEditor : Editor
                 break;
 
             case InteractableInfluence.UPGRADE:
+                objectModifierScriptableObject.powerupAmount = 0f;
+                objectModifierScriptableObject.powerupObjectType = PowerupObjectType.HEALTH;
                 objectModifierScriptableObject.upgradeObjectType = (UpgradeObjectType)EditorGUILayout.EnumPopup("Upgrade Type: ", objectModifierScriptableObject.upgradeObjectType);
                 EditorGUILayout.Space();
                 objectModifierScriptableObject.upgradeModifier = EditorGUILayout.IntField("Upgrade Modifier: ", objectModifierScriptableObject.upgradeModifier);

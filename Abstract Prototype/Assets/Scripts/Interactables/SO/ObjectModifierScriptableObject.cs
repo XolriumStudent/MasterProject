@@ -6,8 +6,11 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "Object Modifier", menuName = "ScriptableObjects")]
 public class ObjectModifierScriptableObject : ScriptableObject
 {
+    private InteractableController interactableController;
+
     public GameObject interactableObject;
     public InteractableInfluence interactableInfluence;
+    public Vector3 interactableObjectLocation;
 
     public UpgradeObjectType upgradeObjectType;
     public int upgradeModifier;
@@ -15,7 +18,31 @@ public class ObjectModifierScriptableObject : ScriptableObject
     public PowerupObjectType powerupObjectType;
     public float powerupAmount;
 
-    public Vector3 interactableObjectLocation;
+    public void SpawnObject()
+    {
+        GameObject newInteractableObject = Instantiate(interactableObject, interactableObjectLocation, Quaternion.identity);
+        newInteractableObject.AddComponent<InteractableController>();
+
+        interactableController = newInteractableObject.GetComponent<InteractableController>();
+        interactableController.interactableInfluence = interactableInfluence;
+        interactableController.interactableObjectLocation = interactableObjectLocation;
+    }
+
+    public void GenerateUpgradeObject(ObjectModifierScriptableObject objectModifierScriptableObject)
+    {
+        SpawnObject();
+        interactableController.upgradeObjectType = upgradeObjectType;
+        interactableController.upgradeModifier = upgradeModifier;
+        interactableController.objectModifierScriptableObject = objectModifierScriptableObject;
+    }
+
+    public void GeneratePowerupObject(ObjectModifierScriptableObject objectModifierScriptableObject)
+    {
+        SpawnObject();
+        interactableController.powerupObjectType = powerupObjectType;
+        interactableController.powerupAmount = powerupAmount;
+        interactableController.objectModifierScriptableObject = objectModifierScriptableObject;
+    }
 }
 
 public enum UpgradeObjectType { WEAPON, ARMOR}
