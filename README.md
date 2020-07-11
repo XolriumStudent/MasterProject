@@ -20,10 +20,12 @@ De getallen 7 en 5 zijn magic numbers die ik op dit moment gebruik om de volgend
 - De NPC heeft een speed van 8 en heb uitgerekend dat door deze speed de NPC 7 units of distance behaald per seconde.
 - Het getal 5 is gewoon een minimum verschil dat ik verwacht voordat de NPC voor het Object zou gaan.
 
-Scenario 1: Afstand van de NPC is kleiner dan het object en de multiplier is te laag om invloed te hebben.
+**Scenario 1: Afstand van de NPC is kleiner dan het object en de multiplier is te laag om invloed te hebben.**
 ![Scenario 1](MP4s_IMGs/Scenario1.gif)
-Scenario 2: Afstand van de NPC is groter dan het object en de multiplier is goed genoeg om invloed te hebben.
+
+**Scenario 2: Afstand van de NPC is groter dan het object en de multiplier is goed genoeg om invloed te hebben.**
 ![Scenario 2](MP4s_IMGs/Scenario2.gif)
-Scenario 3: Afstand van de NPC is kleiner dan het object en de multiplier is goed genoeg om invloed te hebben.
+
+**Scenario 3: Afstand van de NPC is kleiner dan het object en de multiplier is goed genoeg om invloed te hebben.**
 ![Scenario 3](MP4s_IMGs/Scenario3.gif)
 #### Prototype 2: Interactable Object System
