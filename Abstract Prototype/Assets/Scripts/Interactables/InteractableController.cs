@@ -40,7 +40,7 @@ public class InteractableControllerEditor : Editor
         {
             var element = powerupList.serializedProperty.GetArrayElementAtIndex(index);
             rectangle.y += 2;
-            EditorGUI.LabelField(new Rect(rectangle.x, rectangle.y, 60, EditorGUIUtility.singleLineHeight), "POWERUP");
+            EditorGUI.PropertyField(new Rect(rectangle.x, rectangle.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifier"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rectangle.x + 60, rectangle.y, rectangle.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifierScriptableObject"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rectangle.x + rectangle.width - 30, rectangle.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("count"), GUIContent.none);
         };
@@ -49,7 +49,7 @@ public class InteractableControllerEditor : Editor
         {
             var element = upgradeList.serializedProperty.GetArrayElementAtIndex(index);
             rectangle.y += 2;
-            EditorGUI.LabelField(new Rect(rectangle.x, rectangle.y, 60, EditorGUIUtility.singleLineHeight), "UPGRADE");
+            EditorGUI.PropertyField(new Rect(rectangle.x, rectangle.y, 60, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifier"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rectangle.x + 60, rectangle.y, rectangle.width - 60 - 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("objectModifierScriptableObject"), GUIContent.none);
             EditorGUI.PropertyField(new Rect(rectangle.x + rectangle.width - 30, rectangle.y, 30, EditorGUIUtility.singleLineHeight), element.FindPropertyRelative("count"), GUIContent.none);
         };
@@ -77,9 +77,7 @@ public class InteractableControllerEditor : Editor
 [Serializable]
 public struct InteractableTypes
 {
-    public enum ObjectModifier {POWERUP, UPGRADE };
-
-    public ObjectModifier objectModifier;
+    public InteractableType objectModifier;
     public ObjectModifierScriptableObject objectModifierScriptableObject;
     public int count;
 }
