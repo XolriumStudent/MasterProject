@@ -19,5 +19,4 @@ Om deze beslissing te laten maken heb ik moeten zoeken naar een bepaalde formule
 De getallen 7 en 15 zijn magic numbers die ik op dit moment gebruik om de volgende redenen: 
 - De NPC heeft een speed van 8 en heb uitgerekend dat door deze speed de NPC 7 units of distance behaald per seconde.
 - Het getal 15 is gewoon een minimum verschil dat ik verwacht voordat de NPC voor het Object zou gaan.
-
 #### Prototype 2: Interactable Object System
