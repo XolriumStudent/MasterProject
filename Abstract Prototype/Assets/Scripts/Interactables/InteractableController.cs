@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class InteractableController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class InteractableController : MonoBehaviour
     {
         interactableManager = GameObject.Find("InteractableObjectManager").GetComponent<InteractableManager>();
         transform.SetParent(interactableManager.transform);
+        gameObject.tag = "Interactable";
     }
 
     private void Start()

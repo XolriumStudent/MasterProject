@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-[CreateAssetMenu(fileName = "Object Modifier", menuName = "ScriptableObjects")]
+[CreateAssetMenu(fileName = "Object Modifier", menuName = "ScriptableObjects/Object_Modifier")]
 public class ObjectModifierScriptableObject : ScriptableObject
 {
     private InteractableController interactableController;

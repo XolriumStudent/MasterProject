@@ -1,25 +1,17 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
-using static InteractableTypes;
+
 public class InteractableManager : MonoBehaviour
 {
-    [SerializeField]
-    private InteractableType interactableType;
-    [SerializeField]
-    private InteractableInfluence interactableInfluence;
-
     public List<InteractableTypes> PowerupList = new List<InteractableTypes>();
     public List<InteractableTypes> UpgradeList = new List<InteractableTypes>();
 
 
     private void Start()
     {
-        print(PowerupList.Count);
-        print(UpgradeList.Count);
         for (int i = 0; i < PowerupList.Count; i++)
         {
             PowerupList[i].objectModifierScriptableObject.GeneratePowerupObject(PowerupList[i].objectModifierScriptableObject, PowerupList[i].objectModifier);
@@ -44,7 +36,6 @@ public class InteractableManager : MonoBehaviour
                 powerupAmount = 10,
                 powerupObjectType = PowerupObjectType.SPEED
             });
-
             instanceTest.GeneratePowerupObject(instanceTest, instanceTest.interactableType);
         }
     }
