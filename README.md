@@ -64,4 +64,9 @@ Dit dient om aan te tonen welke NPC's kunnen interacten met welk Interactable Ob
 
 **Interactable Object ScriptableObject**
 
-![Interactable Object Manager](MP4s_IMGs/IOSO.gif)
+![Interactable Object ScriptableObject](MP4s_IMGs/IOSO.gif)
+
+**Interactable Object Controller**
+
+In de afbeelding hieronder kan je zien dat het geselecteerd object zich onder de InteractableObjectManager plaatst. Dit object neemt als model referentie de prefab: InteractableObjectReference die ook te zien valt in de hierarchy. In de Scene kan je zien welk object geselecteerd is en welke kleur het heeft. Tenslotte in de Inspector kun je zien dat de Interactable Object Controller de gegevens van de ScriptableObject heeft overgenomen. De groote van dit object is Big dus is de material kleur ook blauw.
+![Interactable Object Controller](MP4s_IMGs/IOC.png)
