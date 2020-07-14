@@ -45,4 +45,23 @@ Hiervoor moest ik op voorhand beslissen welke gegevens belangrijk zijn om mee te
   * Interactable Object ScriptableObject: Dit script is de basis van de Scriptable Object die ik in de Object Manager steek. Hier kan ik gegevens aan doorgeven die het Object zelf later gaat kunnen lezen.
   
     * Interactable Object Controller: Dit script beheert het Object zelf. Hierin zit de belangrijke functionele code die ervoor zorgt dat het Object veranderd afhankelijk van de gegevens.
+    
        * Interactable Object: Dit is het 3D - model van het Object. Deze wordt volledig beinvloed door bovenstaande code en wordt gegenereerd via het ScriptableObject.
+
+Zoals eerder aangehaald zijn er verschillende Interactable Object Types. Deze zijn: Powerup en Upgrade. Beide kunnen een ander effect hebben op de NPC. Voor dit prototype kan de - Powerup dienen als: Health of Speed boost. 
+- Upgrade dienen als: Armor of Weapon upgrade.
+
+De Interactable Objects kunnen ook op drie verschillende grootes zitten:
+- Small (Groen)
+- Normal (Rood)
+- Big (Blauw)
+
+Dit dient om aan te tonen welke NPC's kunnen interacten met welk Interactable Object. Dit is aan te tonen door de kleur van het model.
+
+**Interactable Object Manager**
+
+![Interactable Object Manager](MP4s_IMGs/IOM.png)
+
+**Interactable Object ScriptableObject**
+
+![Interactable Object Manager](MP4s_IMGs/IOSO.gif)
