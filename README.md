@@ -7,10 +7,12 @@ In mijn eerste prototype ging het vooral om er voor te zorgen dat de NPC een bes
 
 Dit gebruik ik als een rudimentaire prototype waar ik later op kan verder werken door middel van *Weights*. 
 
-Ik maak gebruik van de Unity Asset: NavMeshComponents. Dit is een meer advanced NavMeshComponent, waar ik de NavMesh in runtime mee kan aanpassen, speciale zones kan aanpassen
+Ik maak gebruik van de Unity Asset: *NavMeshComponents*. Dit is een meer advanced NavMeshComponent, waar ik de NavMesh in runtime mee kan aanpassen, speciale zones kan aanpassen
 en deze ook tijdens runtime aanpassen indien nodig.
 
-* *Weights is een term gebruikt om aan te tonen hoe belangrijk een actie is voor een KI. In mijn geval gaat de KI weights gebruiken om te beslissen welk object het beste voordeel geeft*.
+* *NavMeshComponents zijn componenten die van Unity zelf die je kan gebruiken via de Unity.AI namespace. Deze maakt van je level een plattegrond en zorgt ervoor dat objecten afgelijnd zijn en ook dynamisch afgelijnd kunnen worden tijdens beweging. Deze plattegrond wordt dan gebruikt door de KI die dan de A\* pathfinding methode gebruikt om zo het efficientste pad te zoeken naar zijn doel.*
+
+* *Weights is een term gebruikt om aan te tonen hoe belangrijk een actie is voor een KI (Kunstmatige Intelligentie). In mijn geval gaat de KI weights gebruiken om te beslissen welk object het beste voordeel geeft*.
 
 Om deze beslissing te laten maken heb ik moeten zoeken naar een bepaalde formule. Uiteindelijk kwam ik zo op de volgende formule dat de NPC zou gebruiken om naar de dichtsbijzijnde NPC te gaan:
 
@@ -19,6 +21,9 @@ Om deze beslissing te laten maken heb ik moeten zoeken naar een bepaalde formule
 De getallen 7 en 5 zijn magic numbers die ik op dit moment gebruik om de volgende redenen: 
 - De NPC heeft een speed van 8 en heb uitgerekend dat door deze speed de NPC 7 units of distance behaald per seconde.
 - Het getal 5 is gewoon een minimum verschil dat ik verwacht voordat de NPC voor het Object zou gaan.
+
+Door deze formule kan ik de NPC al zelf bepalen wat een betere keuze is, door de vergelijking te maken van hoe lang het duurt om de andere NPC's te doden.
+Hieronder zijn drie scenario's die een visueel beeld geven over wat er gebeurd.
 
 **Scenario 1: Afstand van de NPC is kleiner dan het object en de multiplier is te laag om invloed te hebben.**
 ![Scenario 1](MP4s_IMGs/Scenario1.gif)
@@ -29,4 +34,3 @@ De getallen 7 en 5 zijn magic numbers die ik op dit moment gebruik om de volgend
 **Scenario 3: Afstand van de NPC is kleiner dan het object en de multiplier is goed genoeg om invloed te hebben.**
 ![Scenario 3](MP4s_IMGs/Scenario3.gif)
 #### Prototype 2: Interactable Object System
-*UNDER CONSTRUCTION*
