@@ -1,8 +1,8 @@
 # MasterProject# MasterProject: 
-### What are the behaviourial changes of NPC's in a simulation environment set by the player?
+## What are the behaviourial changes of NPC's in a simulation environment set by the player?
 In dit project is mijn doel om onderzoek te doen rond hoe de speler een effect kan hebben op een simulatie door de speler bepaalde variabelen te laten bepalen en hoe ik dit allemaal kan gebruiken voor een leuke demo game.
 
-#### Prototype 1: Movement towards object or other NPC
+### Prototype 1: Movement towards object or other NPC
 In mijn eerste prototype ging het vooral om er voor te zorgen dat de NPC een beslissing zou maken tussen het bewegen naar een andere NPC of eerst naar een object en dan pas naar een NPC.
 
 Dit gebruik ik als een rudimentaire prototype waar ik later op kan verder werken door middel van *Weights*. 
@@ -33,4 +33,16 @@ Hieronder zijn drie scenario's die een visueel beeld geven over wat er gebeurd.
 
 **Scenario 3: Afstand van de NPC is kleiner dan het object en de multiplier is goed genoeg om invloed te hebben.**
 ![Scenario 3](MP4s_IMGs/Scenario3.gif)
-#### Prototype 2: Interactable Object System
+
+### Prototype 2: Interactable Object System
+
+In deze prototype is het de bedoeling dat ik een systeem ontwerp die ik later kan laten werken met een UI systeem zodat de speler tijdens de runtime een Interactable Object kan aanmaken en deze dan door het spel gebruikt kan worden.
+
+Hiervoor moest ik op voorhand beslissen welke gegevens belangrijk zijn om mee te geven aan het systeem en welke scripts ik nodig ga hebben. De structuur die ik dan heb gekozen is de volgende:
+
+* Interactable Object Manager: Dit script gaat er voor zorgen dat alles ordelijk in een lijst terecht komt afhankelijk van het type van Interactable Object (hier komt meer later over). Deze lijsten worden opgevuld met Scriptable Objects.
+
+  * Interactable Object ScriptableObject: Dit script is de basis van de Scriptable Object die ik in de Object Manager steek. Hier kan ik gegevens aan doorgeven die het Object zelf later gaat kunnen lezen.
+  
+    * Interactable Object Controller: Dit script beheert het Object zelf. Hierin zit de belangrijke functionele code die ervoor zorgt dat het Object veranderd afhankelijk van de gegevens.
+       * Interactable Object: Dit is het 3D - model van het Object. Deze wordt volledig beinvloed door bovenstaande code en wordt gegenereerd via het ScriptableObject.
