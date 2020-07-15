@@ -77,7 +77,7 @@ Dit systeem kan ik nu ook gebruiken om de NPC's.
 
 Mijn NPC Object werkt soort gelijk aan mijn Interactable Object Systeem. Er is een NPC Object Manager die een lijst bijhoudt van alle mogelijke NPCs. Deze NPCs worden gegenereerd door een Scriptable Object asset en daarna worden deze gegevens door gegeven aan de NPC Object Controller.
 
-In deze prototype gaat het niet over de beweging van de NPCs dus heb ik deze ook niet expliciet getest. De volgende stap na deze prototype is het samenzetten van de vorige drie system om een volledige demo op te zetten. Daarna kan ik deze demo testen via een playtesting sessie. Deze sessie zal dan ook niet gebaseerd zijn op de gameplay elementen, maar eerder op de technische elementen en als deze op een interessante of intuitieve wijze samenwerken. 
+In deze prototype gaat het niet over de beweging van de NPCs dus heb ik deze ook niet expliciet getest. De volgende stap na deze prototype is het samenzetten van de vorige drie systemen om een volledige demo op te zetten. Daarna kan ik deze demo testen via een playtesting sessie. 
 
 **NPC Object Manager**
 
@@ -97,4 +97,10 @@ Aan deze screenshots kan je merken dat het NPC Object Systeem gelijk is aan het 
 
 Ik gebruik Scriptable Objects voor mijn NPC en Interactable Objecten omdat ik deze via runtime kan laten genereren door de speler via een UI systeem. Dit moet natuurlijk getest worden tijdens Demo 01. Om dit te kunnen doen ga ik een UI systeem moeten maken met verschillende knoppen en input velden, waar de speler gegevens kan ingeven om zo een aantal NPC's en Interactable Objecten te laten genereren in de spel wereld.
 
-Demo 01 zal dan ook bestaan uit de voorgaande prototypes die dan ook met elkaar gaan werken. Concreet gezegd gaat de playtester deze NPCs en Interactables kunnen aanmaken tijdens runtime en nadien op een speel knop kunnen drukken. Als op deze speel knop wordt gedrukt zullen alle NPCs en Interactables in de genereren en gaan de NPCs naar de Interactables bewegen of naar andere NPCs en deze doen verdwijnen. Dit gaat zo door tot er 1 NPC overblijft.
+Demo 01 zal dan ook bestaan uit de voorgaande prototypes die dan ook met elkaar gaan werken. Concreet gezegd gaat de playtester deze NPCs en Interactables kunnen aanmaken tijdens runtime en nadien op een speel knop kunnen drukken. Als op deze speel knop wordt gedrukt zullen alle NPCs en Interactables in de genereren en gaan de NPCs naar de Interactables bewegen of naar andere NPCs en deze doen verdwijnen. Dit gaat zo door tot er 1 NPC overblijft. Deze demo is niet gebaseerd op de gameplay elementen, maar eerder op de technische elementen en als deze op een interessante of intuitieve manier samenwerken. 
+
+***Als er iets zou mislopen vang ik de errors op via een Try-Catch systeem en laat ik de scene herstarten zodat de speler gewoon verder kan testen.***
+
+**Demo 01 Flowchart**
+
+![Demo 01 Flowchart](MP4s_IMGs/DEMO01.png)
