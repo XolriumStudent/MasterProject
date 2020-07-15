@@ -99,7 +99,7 @@ Ik gebruik Scriptable Objects voor mijn NPC en Interactable Objecten omdat ik de
 
 Demo 01 zal dan ook bestaan uit de voorgaande prototypes die dan ook met elkaar gaan werken. Concreet gezegd gaat de playtester deze NPCs en Interactables kunnen aanmaken tijdens runtime en nadien op een speel knop kunnen drukken. Als op deze speel knop wordt gedrukt zullen alle NPCs en Interactables in de genereren en gaan de NPCs naar de Interactables bewegen of naar andere NPCs en deze doen verdwijnen. Dit gaat zo door tot er 1 NPC overblijft. Deze demo is niet gebaseerd op de gameplay elementen, maar eerder op de technische elementen en als deze op een interessante of intuitieve manier samenwerken. 
 
-Als er iets zou mislopen vang ik de errors op via een Try-Catch systeem en laat ik de scene herstarten zodat de speler gewoon verder kan testen.
+***Als er iets zou mislopen vang ik de errors op via een Try-Catch systeem en laat ik de scene herstarten zodat de speler gewoon verder kan testen.***
 
 **Demo 01 Flowchart**
 
