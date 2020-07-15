@@ -101,4 +101,4 @@ Demo 01 zal dan ook bestaan uit de voorgaande prototypes die dan ook met elkaar 
 
 **Demo 01 Flowchart**
 
-![Demo 01 Flowchart](MP4s_IMGs/Demo01.png)
+![Demo 01 Flowchart](MP4s_IMGs/DEMO01.png)
