@@ -6,6 +6,11 @@ public class NPCObjectController : MonoBehaviour
     public EnemyType npcType;
     public NPCScriptableObject npcScriptableObject;
 
+    public float health;
+    public float speed;
+    public float damage;
+    public float defence;
+
     private void Awake()
     {
         transform.SetParent(GameObject.Find("NPCObjectManager").transform);

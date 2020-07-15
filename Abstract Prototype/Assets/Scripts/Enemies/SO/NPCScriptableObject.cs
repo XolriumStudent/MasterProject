@@ -9,6 +9,11 @@ public class NPCScriptableObject : ScriptableObject
     public EnemyType npcType;
     public Vector3 npcLocation;
 
+    public float health;
+    public float speed;
+    public float damage;
+    public float defence;
+
     public void GenerateEnemy(NPCScriptableObject npcScriptableObject, EnemyType npcType)
     {
         npcObject = GameObject.Find("NPCObjectReference");
